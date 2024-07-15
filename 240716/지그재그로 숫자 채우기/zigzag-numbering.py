@@ -13,9 +13,9 @@ for i in range(b):
             arr[j][i]=x
             x+=1
     else:
-        for j in range(0,a,-1):
-            arr[j][i]=x
-            x+=1
+        for j in range(a-1, -1, -1):
+            arr[j][i] = x
+            x += 1
 
 for row in arr:
     for elem in row:
