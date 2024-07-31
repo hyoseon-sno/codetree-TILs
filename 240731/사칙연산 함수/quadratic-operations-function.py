@@ -12,7 +12,7 @@ def func02(a, o, c):
 
 def func03(a, o, c):
     x = a // c
-    print(f"{a} {o} {c} = {x:.2f}")
+    print(f"{a} {o} {c} = {x}")
 
 def func04(a, o, c):
     x = a * c
