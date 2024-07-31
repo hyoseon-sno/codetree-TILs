@@ -6,7 +6,7 @@ def func01(a,b):
         b*=2
     else:
         a*=2
-        b+=250
+        b+=25
     print(a,b)
 
 func01(a,b)
