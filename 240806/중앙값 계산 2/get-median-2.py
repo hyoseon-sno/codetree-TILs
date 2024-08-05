@@ -1,8 +1,11 @@
-n=int(input())
-arr=list(map(int,input().split()))
+n = int(input())
+arr = list(map(int, input().split()))
 
-arr.sort()
+current_numbers = []
+
 for i in range(n):
-    if i==0 or i%2==0:
-        x=i//2
-        print(arr[x],end=" ")
+    current_numbers.append(arr[i])
+    current_numbers.sort()
+    if i % 2 == 0:
+        median = current_numbers[i // 2]
+        print(median, end=" ")
