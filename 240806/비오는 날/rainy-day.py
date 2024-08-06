@@ -1,15 +1,16 @@
-class WeatherData:
-    def __init__(self, date, day, weather):
-        self.date = date
-        self.day = day
-        self.weather = weather
+n=int(input())
+arr=[tuple(input().split()) for _ in range(n)]
 
-n = int(input())
-weather_data = [input().split() for _ in range(n)]
+class WeatherDate:
+    def __init__(self,date,day,weather):
+        self.date=date
+        self.day=day
+        self.weather=weather
 
-rainy_days = [WeatherData(date, day, weather) for date, day, weather in weather_data if weather == "Rain"]
+a=[WeatherDate(date,day,weather) for date,day,weather in arr if weather == "Rain"]
 
-rainy_days.sort(key=lambda x: x.date)
+a.sort(key=lambda x: x.date)
 
-earliest_rainy_day = rainy_days[0]
-print(f"{earliest_rainy_day.date} {earliest_rainy_day.day} {earliest_rainy_day.weather}")
+b=a[0]
+
+print(f"{b.date} {b.day} {b.weather}")
