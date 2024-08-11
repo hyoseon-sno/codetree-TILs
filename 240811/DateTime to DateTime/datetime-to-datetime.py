@@ -5,4 +5,7 @@ day_a=60*b+c
 
 day_b=11*60+11
 
-print(day+day_a-day_b)
+if b<11:
+    print("-1")
+else:
+    print(day+day_a-day_b)
