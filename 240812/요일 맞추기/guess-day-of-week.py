@@ -6,15 +6,18 @@ day_name = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 def day_difference(m1, d1, m2, d2):
     if (m1 > m2) or (m1 == m2 and d1 > d2):
         m1, d1, m2, d2 = m2, d2, m1, d1
+        sign = -1 
+    else:
+        sign = 1
     
     total_days = 0
     if m1 == m2:
-        total_days = d2 - d1
+        total_days = (d2 - d1) * sign
     else:
-        total_days += month_day[m1] - d1  
+        total_days += (month_day[m1] - d1) * sign  
         for i in range(m1 + 1, m2):
-            total_days += month_day[i]    
-        total_days += d2                
+            total_days += month_day[i] * sign  
+        total_days += d2 * sign  
     return total_days
 
 total_days = day_difference(m1, d1, m2, d2)
