@@ -1,5 +1,7 @@
 n=int(input())
-arr=[0 for i in range(100)]
+
+arr=[0]*(101)
+
 
 for _ in range(n):
     a,b=map(int,input().split())
