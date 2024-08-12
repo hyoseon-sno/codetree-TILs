@@ -11,14 +11,12 @@ for i in range(n):
             arr[j] += 1
             arr_c[j] = "B"
         x=x+a-1
-
     elif b == "L":
         for j in range(x, x - a, -1):
             arr[j] += 1
             arr_c[j] = "W"
         x -= a
         x=x+1
-
 
 for k in range(len(arr)):
     if arr[k]>3:
