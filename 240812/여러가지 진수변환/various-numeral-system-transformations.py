@@ -3,7 +3,7 @@ arr=[]
 
 while True:
     if N<B:
-        arr.append(1)
+        arr.append(N)
         break
     else:
         x=N%B
