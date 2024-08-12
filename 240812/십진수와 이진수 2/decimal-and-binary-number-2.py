@@ -14,8 +14,6 @@ for i in range(len(N)):
 
 a=a*17
 
-print(a)
-
 while True:
     if a<2:
         result.append(a)
