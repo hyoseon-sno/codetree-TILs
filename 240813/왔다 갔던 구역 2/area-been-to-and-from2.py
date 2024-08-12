@@ -1,46 +1,46 @@
-# n=int(input())
-# arr = [0] * (n * 10 * 2)
-# x = n * 10
+OFFSET = 1000
+MAX_R = 2000
 
-# for i in range(n):
-#     a, b = tuple(input().split())
-#     a = int(a)
-#     if b == "R":
-#         for j in range(x, x + a):
-#             arr[j] += 1
-#         x += a
-#     elif b == "L":
-#         for j in range(x, x - a, -1):
-#             arr[j] += 1
-#         x -= a
-
-# count = 0
-# for num in arr:
-#     if num > 1:
-#         count += 1
-
-# print(count)
-
+# 변수 선언 및 입력
 n = int(input())
-OFFSET = n * 10  # OFFSET을 n*10으로 설정
-arr = [0] * (OFFSET * 2)  # 배열 크기를 넉넉하게 설정
-x = OFFSET  # 시작 위치를 중앙으로 설정
+segments = []
+
+# 현재 위치
+cur = 0
 
 for _ in range(n):
-    a, b = input().split()
-    a = int(a)
-    if b == "R":
-        for j in range(x, x + a):
-            arr[j] += 1
-        x += a
-    elif b == "L":
-        for j in range(x, x - a, -1):
-            arr[j] += 1
-        x -= a
+	distance, direction = tuple(input().split())
+	distance = int(distance)
+	
+	if direction == 'L':
+		# 왼쪽으로 이동할 경우 : cur - distance ~ cur까지 경로 이동
+		section_left = cur - distance
+		section_right = cur
+		cur -= distance
+	else:
+		# 오른쪽으로 이동할 경우 : cur ~ cur + distance까지 경로 이동
+		section_left = cur
+		section_right = cur + distance
+		cur += distance
+	
+	segments.append([section_left, section_right])
 
-count = 0
-for num in arr:
-    if num >= 2:  # 2번 이상 지나간 구역을 카운트
-        count += 1
+	
+checked = [0] * (MAX_R + 1)
 
-print(count)
+for x1, x2 in segments:
+	# OFFSET을 더해줍니다.
+	x1, x2 = x1 + OFFSET, x2 + OFFSET
+	
+	# 구간을 칠해줍니다.
+	# 구간 단위로 진행하는 문제이므로
+	# x2에 등호가 들어가지 않음에 유의합니다.
+	for i in range(x1, x2):
+		checked[i] += 1
+
+# 2번 이상 지나간 영역의 크기를 구합니다.
+cnt = 0
+for elem in checked:
+	if elem >= 2:
+		cnt += 1
+print(cnt)
