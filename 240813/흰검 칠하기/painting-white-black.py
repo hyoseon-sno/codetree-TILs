@@ -2,7 +2,6 @@ n=int(input())
 arr = [0] * (n * 10 * 2)
 arr_c = [0] * (n * 10 * 2)
 x = n * 10-1
-count=0
 
 for i in range(n):
     a, b = tuple(input().split())
@@ -19,13 +18,12 @@ for i in range(n):
         x -= a
         x=x+1
 
-for k in arr:
-    if k>3:
-        count+=1
+for gray in range(len(arr)):
+    if arr[gray]>3:
+        arr_c[gray]="G"
 
 x=arr_c.count("W")
 y=arr_c.count("B")
 z=arr_c.count("G")
-print(count)
 
 print(x,y,z)
