@@ -15,4 +15,7 @@ for i in range(1,N):
         result.append(count+1)
         count=0
 
-print(max(result))
+if len(result)!=0:
+    print(max(result)) 
+else:
+    print(0)
