@@ -13,9 +13,6 @@ for i in range(1,N):
         count+=1
     if arr[i-1]!=arr[i]:
         result.append(count+1)
-        count=0
+        result.append(1)
 
-if len(result)!=0:
-    print(max(result)) 
-else:
-    print(0)
+print(max(result))
