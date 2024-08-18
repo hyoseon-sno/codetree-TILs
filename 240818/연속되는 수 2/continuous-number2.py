@@ -1,7 +1,7 @@
 N=int(input())
 
 arr=[]
-count=0
+count=1
 result=[]
 
 for _ in range(N):
@@ -12,8 +12,9 @@ if N>1:
     for i in range(1,N):
         if arr[i-1]==arr[i]:
             count+=1
+        result.append(count)
         if arr[i-1]!=arr[i]:
-            result.append(count+1)
+            count=1
 if N==1:
     result.append(1)
 
