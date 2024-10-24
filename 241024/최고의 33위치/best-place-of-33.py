@@ -8,7 +8,7 @@ grid=[
 def get_num_of_gold(row_s, row_e, col_s, col_e):
     num_of_gold=0
 
-    for row in range(row_s, row_e+1):;
+    for row in range(row_s, row_e+1):
         for col in range(col_s, col_e+1):
             num_of_gold+=grid[row][col]
     
