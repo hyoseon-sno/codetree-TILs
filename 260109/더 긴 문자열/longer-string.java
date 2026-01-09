@@ -11,7 +11,7 @@ public class Main {
         int blength = b.length();
 
         if (alength==blength){
-            System.out.printf("Hello World");
+            System.out.printf("same");
         } else if (alength>blength) {
             System.out.printf("%s %d",a,alength);
         } else {
